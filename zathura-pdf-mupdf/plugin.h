@@ -24,6 +24,8 @@ typedef struct mupdf_page_s {
   bool extracted_text; /**< If text has already been extracted */
 } mupdf_page_t;
 
+zathura_error_t pdf_document_annot(zathura_document_t* document);
+
 /**
  * Open a pdf document
  *
