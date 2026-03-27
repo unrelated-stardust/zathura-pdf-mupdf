@@ -3,6 +3,10 @@
 #include "plugin.h"
 #include <mupdf/pdf.h>
 
+girara_list_t* pdf_page_annots_get(zathura_page_t* page, void* data, zathura_error_t* error) {
+  return NULL;
+}
+
 zathura_error_t pdf_document_annot(zathura_document_t* document) {
   printf("INFO: Successfully called 'pdf_document_annot'\n");
   if (document == NULL) {
