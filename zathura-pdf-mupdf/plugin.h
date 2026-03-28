@@ -24,8 +24,6 @@ typedef struct mupdf_page_s {
   bool extracted_text; /**< If text has already been extracted */
 } mupdf_page_t;
 
-zathura_error_t pdf_document_annot(zathura_document_t* document);
-
 /**
  * Open a pdf document
  *
@@ -90,6 +88,16 @@ zathura_error_t pdf_page_clear(zathura_page_t* page, void* mupdf_page);
  * @return List of search results or NULL if an error occurred
  */
 girara_list_t* pdf_page_search_text(zathura_page_t* page, void* mupdf_page, const char* text, zathura_error_t* error);
+
+/**
+ * Returns a list of annotations that are shown on the given page
+ *
+ * @param page Page
+ * @param error Set to an error value (see zathura_error_t) if an
+ *   error occurred
+ * @return List of annotations or NULL if an error occurred
+ */
+girara_list_t* pdf_page_annots_get(zathura_page_t* page, void* mupdf_page, zathura_error_t* error);
 
 /**
  * Returns a list of internal/external links that are shown on the given page
